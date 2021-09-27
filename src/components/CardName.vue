@@ -21,8 +21,11 @@ setInterval(()=>{
 </script>
 
 <template>
+
 <div class="flex m-2 flex-row bg-gray-200 rounded-xl h-24 items-center justify-between px-10">
-  <h1 class="text-2xl">{{friend.name}}</h1>
+  <a :href="friend.profile">
+    <h1 class="text-2xl">{{friend.name}}</h1>
+  </a>
   <h2 class="text-4xl font-mono">{{now}}</h2>
   <BaseButton @click="emit('delete')">Delete</BaseButton>
 </div>
