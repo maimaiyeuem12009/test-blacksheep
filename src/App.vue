@@ -12,6 +12,9 @@
   padding: 0;
   margin: 0;
 }
+html{
+  font-size: 62.5%;
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -25,7 +28,6 @@
   margin-right: auto;
   max-width: 1400px;
   border: 1px solid red;
-  padding-top: 100px;
 }
 
 </style>

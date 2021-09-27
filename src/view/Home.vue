@@ -1,6 +1,14 @@
 <script setup>
 import MainProfile from "../components/MainProfile.vue"
+import CardName from "../components/CardName.vue";
+import { useStore} from "vuex";
+import {ref, computed} from "vue";
 
+
+
+const store = useStore();
+const friends = computed(()=> store.state.friend.friends)
+console.log(friends)
 const profile = {
   name: "John Doe",
   email: "johndoe@gmail.com",
@@ -12,9 +20,12 @@ const profile = {
 
 <template>
 <div class="container">
+  {{friends}}
   <MainProfile
   :profile="profile"
   />
+  <router-view/>
+  <CardName v-for="friend in friends" :id="friend.id" :friend="friend"/>
 
 </div>
 </template>

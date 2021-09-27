@@ -11,10 +11,10 @@
     >
     <option
         v-for="(option,index) in options"
-        :value="option"
+        :value="option.label"
         :key="index"
-        :selected="option === modelValue"
-    >{{option}}</option>
+        :selected="option.label === modelValue"
+    >{{option.label}} / {{option.value}}</option>
     </select>
     <p
         v-if="error"

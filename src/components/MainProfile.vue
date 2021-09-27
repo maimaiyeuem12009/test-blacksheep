@@ -10,14 +10,14 @@ const props = defineProps({profile: Object})
     <img class="w-36 h-36 rounded-full" :src="props.profile.image"/>
     <div class="profile-data ">
       <h2 class="text-4xl font-semibold">{{props.profile.name}}</h2>
-      <p class="email">{{props.profile.email}}</p>
+      <p class="text-2xl email">{{props.profile.email}}</p>
     </div>
     <router-link to="/addfriend">
       <baseButton>Add Friend</baseButton>
     </router-link>
 
   </div>
-  <router-view/>
+
 
 
 </template>

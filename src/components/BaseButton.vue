@@ -16,8 +16,7 @@ export default {
 <style scoped lang="scss">
 .base-button{
   font-size: 1.953em;
-  height: 50px;
-  width: 200px;
+  padding: 10px 30px 10px 30px;
   display: flex;
   align-items: center;
   justify-content: center;
