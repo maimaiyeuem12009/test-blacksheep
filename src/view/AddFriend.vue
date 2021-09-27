@@ -20,14 +20,14 @@ let [time, name, profile] = [
 const createFriend = (payload) => store.dispatch('friend/createFriend',payload)
 
 const sendForm = () => {
+  const id = uuidv1()
   let friend = {
-    id: uuidv1(),
     name: name.value,
     profile: profile.value,
     time: time.value,
   }
-  createFriend(friend)
-  router.push({ name: 'Home', params: {id: event.id }})
+  createFriend({friend, id})
+  router.push({ name: 'Home'})
 }
 
 </script>

@@ -3,21 +3,20 @@ import { v1 as uuidv1 } from 'uuid'
 export default {
     namespaced: true,
     state: {
-        friends: [],
+        friends: {},
     },
     mutations: {
-        ADD_FRIEND(state, friend){
-            state.friends.push(friend)
+        ADD_FRIEND(state, {friend, id}){
+            state.friends[id] = friend
+            console.log(id)
         },
         DELETE_FRIEND(state, id){
-            const friend = state.friends.find((f) => f.id === id)
-            const index = state.friends.indexOf(friend)
-            state.friends.splice(index,1)
+            delete state.friends[id]
         },
     },
     actions: {
-        createFriend({commit}, friend) {
-            commit('ADD_FRIEND', friend)
+        createFriend({commit}, {friend, id}) {
+            commit('ADD_FRIEND', {friend, id})
         },
         removeFriend({commit},id) {
             commit('DELETE_FRIEND',id)
